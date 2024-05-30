@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TodosModule } from './todos/todos.module';
+import { TodoGroupModule } from './todo-group/todo-group.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Todo } from './entities/Todo.entity';
-import { TodoGroupModule } from './todo-group/todo-group.module';
-import { TodoGroupService } from './todo-group/todo-group.service';
 import { TodoGroup } from './entities/TodoGroup.entity';
+import { TodosModule } from './todos/todos.module';
 
 @Module({
   imports: [
@@ -24,6 +23,6 @@ import { TodoGroup } from './entities/TodoGroup.entity';
     TodoGroupModule,
   ],
   controllers: [AppController],
-  providers: [AppService, TodoGroupService],
+  providers: [AppService],
 })
 export class AppModule {}
